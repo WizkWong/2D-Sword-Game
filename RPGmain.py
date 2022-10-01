@@ -46,7 +46,7 @@ class enemy:
         self.y = enemyy
         self.leftx = self.x
         self.rightx = self.x + 64
-        self.midpx = (self. rightx + self.leftx) / 2
+        self.midpx = (self.rightx + self.leftx) / 2
         self.movm = enemymove
         self.ablshoot = ablshoot
         if self.ablshoot is True:
@@ -60,18 +60,20 @@ class enemy:
             self.movm *= -1
 
         py = playery + 63
-        if (playerrightx // 1 == self.leftx // 1 and playery <= self.y <= playery + 64) or (py // 1 == self.y // 1 and self.leftx <= middlex <= self.rightx - 32):
+        if (playerrightx // 1 == self.leftx // 1 and playery <= self.y <= playery + 64) or (
+                py // 1 == self.y // 1 and self.leftx <= middlex <= self.rightx - 32):
             takedamage = True
             takedamageleft = True
 
-        elif (playerleftx // 1 == self.rightx // 1 and playery <= self.y <= playery + 64) or (py // 1 == self.y // 1 and self.leftx + 32 <= middlex <= self.rightx):
+        elif (playerleftx // 1 == self.rightx // 1 and playery <= self.y <= playery + 64) or (
+                py // 1 == self.y // 1 and self.leftx + 32 <= middlex <= self.rightx):
             takedamage = True
             takedamageright = True
 
         self.x += self.movm
         self.leftx = self.x
         self.rightx = self.x + 64
-        self.midpx = (self. rightx + self.leftx) / 2
+        self.midpx = (self.rightx + self.leftx) / 2
 
     def enemyshoot(self):
         global bullety, bulletx, rangex, shootleft, shootright, ncol, takedamage, takedamageleft, takedamageright
@@ -122,7 +124,6 @@ class enemy:
                 self.shoot = False
                 self.cooldown = True
 
-
     def damage_enemy(self, x, y):
         distance = math.sqrt(((x - self.midpx) ** 2 + (y - self.y) ** 2))
         if distance < 27:
@@ -134,6 +135,7 @@ class enemy:
             for y in enemyplatform[x]:
                 if y == self:
                     enemyplatform[x].remove(self)
+
 
 class specialenemy(enemy):
     list = []
@@ -159,6 +161,7 @@ class specialenemy(enemy):
                 elif self.movm < 0:
                     self.movm = -0.1
 
+
 # enemy_img, enemyx, enemyy, enemymove, ablshoot
 enemy('skull.png', 310, 433, 0.1, True)
 enemy('skull.png', 100, 383, 0.1, False)
@@ -166,8 +169,6 @@ enemy('skull.png', 160, 283, 0.1, True)
 enemy('skull.png', 692, 203, 0, True)
 specialenemy('skull.png', 400, 23, 0.1, False, 'Fast')
 enemy('skull.png', 700, 23, 0, True)
-
-
 
 
 class block:
@@ -196,21 +197,23 @@ class block:
             templeftx += self.pixel
         self.rightx = templeftx
 
-
     def blockp(self):
         global gravity, n_gravity, inair, jump, playermove, playery
         if jump is False:
-            if self.stand // 1 == playery // 1 and (self.leftx <= playerleftx <= self.rightx or self.leftx <= playerrightx <= self.rightx):
+            if self.stand // 1 == playery // 1 and (
+                    self.leftx <= playerleftx <= self.rightx or self.leftx <= playerrightx <= self.rightx):
                 playery //= 1
                 gravity = 0
                 inair = False
 
-        if self.boty // 1 == playery // 1 and (self.leftx <= playerleftx <= self.rightx or self.leftx <= playerrightx <= self.rightx):
+        if self.boty // 1 == playery // 1 and (
+                self.leftx <= playerleftx <= self.rightx or self.leftx <= playerrightx <= self.rightx):
             jump = False
             gravity = 0
             n_gravity = 0
 
-        if self.stand < playery < self.boty and (self.leftx <= playerleftx <= self.rightx or self.leftx <= playerrightx <= self.rightx):
+        if self.stand < playery < self.boty and (
+                self.leftx <= playerleftx <= self.rightx or self.leftx <= playerrightx <= self.rightx):
             playermove = 0
 
 
@@ -229,6 +232,7 @@ block('grass 32 pixel.png', 32, 13, 70, 400, 2)
 for x in range(0, len(block.listenemy)):
     enemyplatform.append([])
     enemyplatform[x].append(enemy.list[x])
+
 
 def playertakedamage():
     global playermove, takedamage, takedamagemove, takedamageleft, takedamageright, playerhlth
@@ -367,11 +371,9 @@ while running:
                     left = False
                     right = True
 
-                if event.key == pygame.K_w:
-                    if inair is False:
-                        if takedamage is False:
-                            jump = True
-                            gravity = -0.3
+                if event.key == pygame.K_w and inair is False and takedamage is False:
+                    jump = True
+                    gravity = -0.3
 
                 if event.key == pygame.K_SPACE and sword is False:
                     sword = True
