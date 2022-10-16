@@ -13,12 +13,12 @@ menutxt = font.render('Press P to start the Game', False, (0, 0, 0))
 gameovertxt = font.render('GAME OVER', False, (0, 0, 0,))
 wintxt = font.render('YOU WIN', False, (0, 0, 0,))
 
-flagimg = pygame.image.load('flags.png')
-portalimg = pygame.image.load('portal.png')
+flagimg = pygame.image.load('image/flags.png')
+portalimg = pygame.image.load('image/portal.png')
 
-playerimgr = pygame.image.load('knightv2 right.png')
-playerimgl = pygame.image.load('knightv2 left.png')
-healthimg = pygame.image.load('heart.png')
+playerimgr = pygame.image.load('image/knightv2 right.png')
+playerimgl = pygame.image.load('image/knightv2 left.png')
+healthimg = pygame.image.load('image/heart.png')
 playerx = 0
 playerleftx = playerx + 10
 playerrightx = playerx + 36
@@ -28,11 +28,11 @@ playermove = 0
 gravity = 0
 playerhlth = 3
 
-swordr_img = pygame.image.load('sword right.png')
+swordr_img = pygame.image.load('image/sword right.png')
 
-swordl_img = pygame.image.load('sword left.png')
+swordl_img = pygame.image.load('image/sword left.png')
 
-bullet_img = pygame.image.load('dot.PNG')
+bullet_img = pygame.image.load('image/dot.PNG')
 
 enemyplatform = []
 
