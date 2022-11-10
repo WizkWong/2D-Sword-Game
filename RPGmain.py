@@ -163,12 +163,12 @@ class specialenemy(enemy):
 
 
 # enemy_img, enemyx, enemyy, enemymove, ablshoot
-enemy('skull.png', 310, 433, 0.1, True)
-enemy('skull.png', 100, 383, 0.1, False)
-enemy('skull.png', 160, 283, 0.1, True)
-enemy('skull.png', 692, 203, 0, True)
-specialenemy('skull.png', 400, 23, 0.1, False, 'Fast')
-enemy('skull.png', 700, 23, 0, True)
+enemy('image/skull.png', 310, 433, 0.1, True)
+enemy('image/skull.png', 100, 383, 0.1, False)
+enemy('image/skull.png', 160, 283, 0.1, True)
+enemy('image/skull.png', 692, 203, 0, True)
+specialenemy('image/skull.png', 400, 23, 0.1, False, 'Fast')
+enemy('image/skull.png', 700, 23, 0, True)
 
 
 class block:
@@ -218,16 +218,16 @@ class block:
 
 
 # img, pixel, value, topy, leftx, nthenemy
-block('grass 32 pixel.png', 32, 25, 570, 0, 0)
-block('grass 32 pixel.png', 32, 10, 480, 300, 1)
-block('grass 32 pixel.png', 32, 5, 430, 80, 1)
-block('grass 32 pixel.png', 32, 8, 330, 140, 1)
-block('grass 32 pixel.png', 32, 2, 250, 400, 0)
-block('grass 32 pixel.png', 32, 2, 250, 530, 0)
-block('grass 32 pixel.png', 32, 5, 250, 660, 1)
-block('grass 32 pixel.png', 32, 8, 150, 0, 0)
-block('grass 32 pixel.png', 32, 2, 100, 280, 0)
-block('grass 32 pixel.png', 32, 13, 70, 400, 2)
+block('image/grass 32 pixel.png', 32, 25, 570, 0, 0)
+block('image/grass 32 pixel.png', 32, 10, 480, 300, 1)
+block('image/grass 32 pixel.png', 32, 5, 430, 80, 1)
+block('image/grass 32 pixel.png', 32, 8, 330, 140, 1)
+block('image/grass 32 pixel.png', 32, 2, 250, 400, 0)
+block('image/grass 32 pixel.png', 32, 2, 250, 530, 0)
+block('image/grass 32 pixel.png', 32, 5, 250, 660, 1)
+block('image/grass 32 pixel.png', 32, 8, 150, 0, 0)
+block('image/grass 32 pixel.png', 32, 2, 100, 280, 0)
+block('image/grass 32 pixel.png', 32, 13, 70, 400, 2)
 
 for x in range(0, len(block.listenemy)):
     enemyplatform.append([])
@@ -295,12 +295,12 @@ def reset():
     takedamage = False
     takedamageleft, takedamageright = False, False
     enemy.list.clear()
-    enemy('skull.png', 310, 433, 0.1, True)
-    enemy('skull.png', 100, 383, 0.1, False)
-    enemy('skull.png', 160, 283, 0.1, True)
-    enemy('skull.png', 692, 203, 0, True)
-    specialenemy('skull.png', 400, 23, 0.1, False, 'Fast')
-    enemy('skull.png', 700, 23, 0, True)
+    enemy('image/skull.png', 310, 433, 0.1, True)
+    enemy('image/skull.png', 100, 383, 0.1, False)
+    enemy('image/skull.png', 160, 283, 0.1, True)
+    enemy('image/skull.png', 692, 203, 0, True)
+    specialenemy('image/skull.png', 400, 23, 0.1, False, 'Fast')
+    enemy('image/skull.png', 700, 23, 0, True)
     enemyplatform.clear()
     for x in range(0, len(block.listenemy)):
         enemyplatform.append([])
